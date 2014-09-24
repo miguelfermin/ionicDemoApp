@@ -39,6 +39,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+    
     // Navigation demo
     .state('app.navigation', {
       url: "/navigation",
@@ -49,29 +50,29 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
     // Table Editing demo
-    .state('app.table_editing', {
-      url: "/table_editing",
+    .state('app.tbediting', {
+      url: "/tbediting",
       views: {
         'menuContent' :{
-          templateUrl: "templates/table_editing.html"
+          templateUrl: "templates/tbediting.html"
         }
       }
     })
     // Table Re-ordering demo
-    .state('app.table_reordering', {
-      url: "/table_reordering",
+    .state('app.tbreordering', {
+      url: "/tbreordering",
       views: {
         'menuContent' :{
-          templateUrl: "templates/table_reordering.html"
+          templateUrl: "templates/tbreordering.html"
         }
       }
     })
     // Table Sticky headers demo
-    .state('app.table_sticky_headers', {
-      url: "/table_sticky_headers",
+    .state('app.tbheaders', {
+      url: "/tbheaders",
       views: {
         'menuContent' :{
-          templateUrl: "templates/table_sticky_headers.html"
+          templateUrl: "templates/tbheaders.html"
         }
       }
     })
@@ -105,7 +106,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     });
-    
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/scrolling');
 });
