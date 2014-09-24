@@ -9,23 +9,51 @@
 
   <ion-side-menu side="left">
     <header class="bar bar-header bar-stable">
-      <h1 class="title">Left</h1>
+      <h1 class="title">Menu</h1>
     </header>
     <ion-content class="has-header">
+
       <ion-list>
-        <ion-item nav-clear menu-close ng-click="login()">
-          Login
+
+        <!-- Scrolling -->
+        <ion-item nav-clear menu-close href="#/app/scrolling">
+          Scrolling
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/search">
-          Search
+
+        <!-- Navigation -->
+        <ion-item nav-clear menu-close href="#/app/navigation">
+          Navigation
         </ion-item>
-        <ion-item nav-clear menu-close href="#/app/browse">
-          Browse
+
+        <!-- Table Editing -->
+        <ion-item nav-clear menu-close href="#/app/table_editing">
+          Table Editing
+        </ion-item>
+
+        <!-- Table Re-ordering -->
+        <ion-item nav-clear menu-close href="#/app/table_reordering">
+          Table Re-ordering
+        </ion-item>
+
+        <!-- Table Sticky Headers -->
+        <ion-item nav-clear menu-close href="#/app/table_sticky_headers">
+          Table Sticky Headers
+        </ion-item>
+
+        <!-- Theming -->
+        <ion-item nav-clear menu-close href="#/app/theming">
+          Theming
+        </ion-item>
+
+        <!-- Lists; don't touch yet -->
+        <!-- <ion-item nav-clear menu-close href="#/app/playlists">
+          Table Sticky Headers
         </ion-item>
         <ion-item nav-clear menu-close href="#/app/playlists">
-          Playlists
-        </ion-item>
+          Theming
+        </ion-item> -->
       </ion-list>
     </ion-content>
   </ion-side-menu>
+
 </ion-side-menus>

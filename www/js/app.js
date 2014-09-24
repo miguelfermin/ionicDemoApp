@@ -26,27 +26,67 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     .state('app', {
       url: "/app",
       abstract: true,
-      templateUrl: "templates/menu.html",
-      controller: 'AppCtrl'
+      templateUrl: "templates/menu.html"
+      //controller: 'AppCtrl'
     })
 
-    .state('app.search', {
-      url: "/search",
+    // Scrolling demo
+    .state('app.scrolling', {
+      url: "/scrolling",
       views: {
         'menuContent' :{
-          templateUrl: "templates/search.html"
+          templateUrl: "templates/scrolling.html"
+        }
+      }
+    })
+    // Navigation demo
+    .state('app.navigation', {
+      url: "/navigation",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/navigation.html"
+        }
+      }
+    })
+    // Table Editing demo
+    .state('app.table_editing', {
+      url: "/table_editing",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/table_editing.html"
+        }
+      }
+    })
+    // Table Re-ordering demo
+    .state('app.table_reordering', {
+      url: "/table_reordering",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/table_reordering.html"
+        }
+      }
+    })
+    // Table Sticky headers demo
+    .state('app.table_sticky_headers', {
+      url: "/table_sticky_headers",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/table_sticky_headers.html"
+        }
+      }
+    })
+    // Theming demo
+    .state('app.theming', {
+      url: "/theming",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/theming.html"
         }
       }
     })
 
-    .state('app.browse', {
-      url: "/browse",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/browse.html"
-        }
-      }
-    })
+
+    // List and Detail
     .state('app.playlists', {
       url: "/playlists",
       views: {
@@ -56,7 +96,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-
     .state('app.single', {
       url: "/playlists/:playlistId",
       views: {
@@ -66,7 +105,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     });
+    
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/playlists');
+  $urlRouterProvider.otherwise('/app/scrolling');
 });
 
