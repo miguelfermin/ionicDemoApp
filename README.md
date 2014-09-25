@@ -6,7 +6,8 @@ ionicDemohApp
 * This is a simple app that I'm using to learn the basic concepts of Ionic and to demonstrate how it could help us develop a cross-platform mobile app.
 * Version 1.0
 
-![alt tag](RequirementsDemo.png)
+![alt tag](RequirementsDemoIOS.png)
+![alt tag](RequirementsDemoAndroid.png)
 
 ### How do I get set up? ###
 
