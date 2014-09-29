@@ -4,9 +4,9 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+var app = angular.module('starter', ['ionic', 'starter.controllers', 'pascalprecht.translate']);
 
-.run(function($ionicPlatform) {
+app.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -18,18 +18,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       StatusBar.styleDefault();
     }
   });
-})
+});
 
-.config(function($stateProvider, $urlRouterProvider) {
+app.config(['$stateProvider','$urlRouterProvider', '$translateProvider', function($stateProvider, $urlRouterProvider, $translateProvider) {
   $stateProvider
-
     .state('app', {
       url: "/app",
       abstract: true,
       templateUrl: "templates/menu.html"
       //controller: 'AppCtrl'
     })
-
     // Scrolling demo
     .state('app.scrolling', {
       url: "/scrolling",
@@ -40,7 +38,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-
+    // Translations and Localization
+    .state('app.localization', {
+      url: "/localization",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/localization.html"
+          //controller: "ScrollingCtrl"
+        }
+      }
+    })
     // Navigation demo
     .state('app.navigation', {
       url: "/navigation",
@@ -50,7 +57,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
-
     // Table Editing demo
     .state('app.tbediting', {
       url: "/tbediting",
@@ -89,54 +95,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
-
-
-
-/*
-// setup an abstract state for the tabs directive
-    .state('tab', {
-      url: "/tab",
-      abstract: true,
-      templateUrl: "templates/navigation.html"
-    })
-
-// Each tab has its own nav history stack:
-    .state('tab.dash', {
-      url: '/dash',
-      views: {
-        'tab-dash': {
-          templateUrl: 'templates/tab-dash.html'
-        }
-      }
-    })
-    .state('tab.friends', {
-      url: '/friends',
-      views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
-        }
-      }
-    })
-    .state('tab.friend-detail', {
-      url: '/friend/:friendId',
-      views: {
-        'tab-friends': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
-        }
-      }
-    })
-    .state('tab.account', {
-      url: '/account',
-      views: {
-        'tab-account': {
-          templateUrl: 'templates/tab-account.html'
-        }
-      }
-    })*/
-
-
     // List and Detail
     .state('app.playlists', {
       url: "/playlists",
@@ -156,7 +114,29 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/scrolling');
-});
+
+  // Internationalization and Localization with 'angular-translation' framework //
+  $translateProvider.translations('en', translations_en);
+  $translateProvider.translations('es', translations_es);
+  $translateProvider.preferredLanguage('en');
+}]);
+
+/* Translation table */
+var translations_en = {
+  title: 'Cars Kill More Teens than Computers and Cell Phones Combined',
+  story: 'Prevalence estimates vary according to definition and measurement, but do not appear to be rising substantially with increasing access to mobile and online technologies, possibly because these technologies pose no additional risk to offline behaviour, or because any risks are offset by a commensurate growth in safety awareness and initiatives!',
+  author: 'Justin W Patchin',
+  date: 'Published on {{date}}'
+};
+
+var translations_es = {
+  title: 'Coches matan a más adolescentes que las computadoras y los teléfonos celulares combinados',
+  story: 'Las estimaciones de prevalencia varían según la definición y medición, pero no parecen estar aumentando sustancialmente con el aumento del acceso a las tecnologías móviles y en línea, posiblemente porque estas tecnologías no representan un riesgo adicional a la conducta fuera de línea, o porque los riesgos se ven compensados ​​por un crecimiento proporcional en la seguridad sensibilización e iniciativas!',
+  author: 'Justin W Patchin',
+  date: 'Publicado el {{date}}'
+};
+
 

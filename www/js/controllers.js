@@ -27,9 +27,21 @@ angular.module('starter.controllers', [])
   };
 })
 
+.controller('LocalizationCtrl', function($scope) {
+
+  $scope.translateToEnglish = function() {
+    $translateProvider.preferredLanguage('en');
+    console.log('$scope.translateToEnglish');
+  };
+
+  $scope.translateToSpanish = function() {
+    $translateProvider.preferredLanguage('es');
+    console.log('$scope.translateToSpanish = function()');
+  };
+})
 
 
-
+// Master/Detail
 .controller('PlaylistsCtrl', function($scope) {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
@@ -40,18 +52,12 @@ angular.module('starter.controllers', [])
     { title: 'Cowbell', id: 6 }
   ];
 })
-
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
-
-
 // tabs controllers
 .controller('FriendsCtrl', function($scope, Friends) {
   //$scope.friends = Friends.all();
 })
-
 .controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {
   //$scope.friend = Friends.get($stateParams.friendId);
 });
-
-
