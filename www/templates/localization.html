@@ -5,11 +5,10 @@
 </ion-nav-buttons>
 
 <ion-content ng-controller="LocalizationCtrl" padding="true" >
-	
 	<!-- Action buttons -->
-	<button on-tap="translateToEnglish()" class="button button-clear button-positive">English</button>
-	<button on-tap="translateToSpanish()" class="button button-clear button-positive">Spanish</button>
-	
+	<button ng-click="translateToEnglish()" class="button button-clear button-positive">English</button>
+	<button ng-click="translateToSpanish()" class="button button-clear button-positive">Spanish</button>
+
 	<!-- Content -->
 	<h3>{{'title' | translate }}</h3>
 	<p>{{'story' | translate }}</p>

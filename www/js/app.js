@@ -43,8 +43,8 @@ app.config(['$stateProvider','$urlRouterProvider', '$translateProvider', functio
       url: "/localization",
       views: {
         'menuContent' :{
-          templateUrl: "templates/localization.html"
-          //controller: "ScrollingCtrl"
+          templateUrl: "templates/localization.html",
+          controller: "LocalizationCtrl"
         }
       }
     })
@@ -72,7 +72,8 @@ app.config(['$stateProvider','$urlRouterProvider', '$translateProvider', functio
       url: "/tbreordering",
       views: {
         'menuContent' :{
-          templateUrl: "templates/tbreordering.html"
+          templateUrl: "templates/tbreordering.html",
+          controller: "TableReorderingCtrl"
         }
       }
     })
@@ -82,15 +83,6 @@ app.config(['$stateProvider','$urlRouterProvider', '$translateProvider', functio
       views: {
         'menuContent' :{
           templateUrl: "templates/tbheaders.html"
-        }
-      }
-    })
-    // Theming demo
-    .state('app.theming', {
-      url: "/theming",
-      views: {
-        'menuContent' :{
-          templateUrl: "templates/theming.html"
         }
       }
     })

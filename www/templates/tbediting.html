@@ -1,21 +1,22 @@
 <!-- Table Editing Demo Template -->
-<ion-view title="Table Editing">
+<ion-view title="Table Edit">
 	<!-- Navigation -->
 	<ion-nav-buttons side="left">
 		<button menu-toggle="left"class="button button-icon icon ion-navicon"></button>
 	</ion-nav-buttons>
 	<!-- Simple Editable-Table -->
 	<ion-content ng-controller="TableEditCtrl">
+		<ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()"></ion-refresher>
 		<ion-list class="list">
 			<ion-item class="item my-item" 
 				collection-repeat="item in items" 
 				collection-item-width="'100%'"
 				collection-item-height="60">
-				<!-- Editing options -->
-				<ion-option-button class="button-positive">Share</ion-option-button>
-				<ion-option-button class="button-energized">Edit</ion-option-button>
-				<ion-option-button class="button-assertive">Delete</ion-option-button>
 				{{item}}
+				<!-- Editing options -->
+				<ion-option-button class="button-positive"  ng-click="share(item)">Share</ion-option-button>
+				<ion-option-button class="button-energized" ng-click="edit(item)">Edit</ion-option-button>
+				<ion-option-button class="button-assertive" ng-click="onItemDelete(item)">Delete</ion-option-button>
 			</ion-item>
 		</ion-list>
 	</ion-content>
