@@ -86,7 +86,6 @@ app.config(['$stateProvider','$urlRouterProvider', '$translateProvider', functio
         }
       }
     })
-
     // List and Detail
     .state('app.playlists', {
       url: "/playlists",
