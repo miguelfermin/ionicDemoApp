@@ -18,10 +18,10 @@ Screenshots
 ### How do I get set up? ###
 
 * Simply clone this repo
-* Follow steps 1 and 3 of [Getting started with Ionic] (http://ionicframework.com/getting-started/)
+* Follow steps 1 and 3 of [Getting started with Ionic](http://ionicframework.com/getting-started/)
   * Note: for step 3 "myApp" corresponds to this app's path and name "ionicDemoApp"
   * Note: you probably have to run "npm install" to get all node dependencies
 
 ### Who do I talk to? ###
 
-* [Miguel Fermin] (mailto:mfermin@newstex.com)
+* [Miguel Fermin](mailto:mfermin@newstex.com)
